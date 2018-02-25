@@ -49,7 +49,7 @@ public class CentreActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 long n = dataSnapshot.getChildrenCount();
-                for(long i=1;i<n;i++){
+                for(long i=1;i<=n;i++){
                     String centreName = dataSnapshot.child(Long.toString(i)).child("name").getValue().toString();
                     String centreID = dataSnapshot.child(Long.toString(i)).child("id").getValue().toString();
                     String address = dataSnapshot.child(Long.toString(i)).child("address").getValue().toString();
