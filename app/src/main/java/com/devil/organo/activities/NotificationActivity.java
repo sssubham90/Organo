@@ -24,21 +24,22 @@ import java.util.List;
 public class NotificationActivity extends AppCompatActivity {
     private List<NotificationElement> NotificationList = new ArrayList<>();
     private SessionManager sessionManager;
+    private NotificationListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         sessionManager = new SessionManager(this);
         if(getSupportActionBar()!=null)
             getSupportActionBar().hide();
         getData();
-        NotificationListAdapter mAdapter = new NotificationListAdapter(this, NotificationList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        mAdapter = new NotificationListAdapter(NotificationActivity.this, NotificationList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(NotificationActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new ListDividerItem(this, LinearLayoutManager.VERTICAL, R.drawable.listdivider));
+        recyclerView.addItemDecoration(new ListDividerItem(NotificationActivity.this, LinearLayoutManager.VERTICAL, R.drawable.listdivider));
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -52,12 +53,11 @@ public class NotificationActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 long n = dataSnapshot.getChildrenCount();
                 for(long i=0;i<n;i++){
-                    String date = dataSnapshot.child("i").child("date").getValue().toString();
-                    String message = dataSnapshot.child("i").child("message").getValue().toString();
+                    String date = dataSnapshot.child(Long.toString(i)).child("date").getValue().toString();
+                    String message = dataSnapshot.child(Long.toString(i)).child("message").getValue().toString();
                     NotificationList.add(new NotificationElement(date,message));
+                    mAdapter.notifyItemInserted((int) (i));
                 }
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("CentreActivity", "Value is: " + value);
             }
             @Override
             public void onCancelled(DatabaseError error) {

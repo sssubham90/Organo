@@ -25,6 +25,7 @@ import java.util.List;
 public class RecentActivity extends AppCompatActivity {
     private List<RecentElement> RecentList = new ArrayList<>();
     private SessionManager sessionManager;
+    private RecentListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,13 @@ public class RecentActivity extends AppCompatActivity {
         sessionManager = new SessionManager(this);
         if(getSupportActionBar()!=null)
             getSupportActionBar().hide();
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         getData();
-        RecentListAdapter mAdapter = new RecentListAdapter(this, RecentList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        mAdapter = new RecentListAdapter(RecentActivity.this, RecentList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(RecentActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new ListDividerItem(this, LinearLayoutManager.VERTICAL, R.drawable.listdivider));
+        recyclerView.addItemDecoration(new ListDividerItem(RecentActivity.this, LinearLayoutManager.VERTICAL, R.drawable.listdivider));
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -53,15 +54,14 @@ public class RecentActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 long n = dataSnapshot.getChildrenCount();
                 for(long i=0;i<n;i++){
-                    String date = dataSnapshot.child("i").child("date").getValue().toString();
-                    String id = dataSnapshot.child("i").child("id").getValue().toString();
-                    String name = dataSnapshot.child("i").child("name").getValue().toString();
-                    String centreName = dataSnapshot.child("i").child("centreName").getValue().toString();
-                    String organ = dataSnapshot.child("i").child("organ").getValue().toString();
+                    String date = dataSnapshot.child(Long.toString(i)).child("date").getValue().toString();
+                    String id = dataSnapshot.child(Long.toString(i)).child("id").getValue().toString();
+                    String name = dataSnapshot.child(Long.toString(i)).child("name").getValue().toString();
+                    String centreName = dataSnapshot.child(Long.toString(i)).child("centreName").getValue().toString();
+                    String organ = dataSnapshot.child(Long.toString(i)).child("organ").getValue().toString();
                     RecentList.add(new RecentElement(date,id,name,centreName,organ));
+                    mAdapter.notifyItemInserted((int) i);
                 }
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("CentreActivity", "Value is: " + value);
             }
             @Override
             public void onCancelled(DatabaseError error) {

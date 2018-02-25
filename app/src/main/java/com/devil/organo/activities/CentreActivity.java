@@ -22,42 +22,42 @@ import java.util.List;
 
 public class CentreActivity extends AppCompatActivity {
     private List<CentreElement> CentreList = new ArrayList<>();
+    private CentreListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_centre);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         if(getSupportActionBar()!=null)
             getSupportActionBar().hide();
         getData();
-        CentreListAdapter mAdapter = new CentreListAdapter(this, CentreList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        mAdapter = new CentreListAdapter(CentreActivity.this, CentreList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(CentreActivity.this);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new ListDividerItem(this, LinearLayoutManager.VERTICAL, R.drawable.listdivider));
+        recyclerView.addItemDecoration(new ListDividerItem(CentreActivity.this, LinearLayoutManager.VERTICAL, R.drawable.listdivider));
         recyclerView.setAdapter(mAdapter);
     }
 
     void getData(){
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("centres");
+        final DatabaseReference myRef = database.getReference("centre");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 long n = dataSnapshot.getChildrenCount();
-                for(long i=0;i<n;i++){
-                    String centreName = dataSnapshot.child("i").child("name").getValue().toString();
-                    String centreID = dataSnapshot.child("i").child("id").getValue().toString();
-                    String address = dataSnapshot.child("i").child("address").getValue().toString();
-                    String lat = dataSnapshot.child("i").child("lat").getValue().toString();
-                    String lng = dataSnapshot.child("i").child("lng").getValue().toString();
+                for(long i=1;i<n;i++){
+                    String centreName = dataSnapshot.child(Long.toString(i)).child("name").getValue().toString();
+                    String centreID = dataSnapshot.child(Long.toString(i)).child("id").getValue().toString();
+                    String address = dataSnapshot.child(Long.toString(i)).child("address").getValue().toString();
+                    String lat = dataSnapshot.child(Long.toString(i)).child("lat").getValue().toString();
+                    String lng = dataSnapshot.child(Long.toString(i)).child("lng").getValue().toString();
                     CentreList.add(new CentreElement(centreName,centreID,address,Double.parseDouble(lat),Double.parseDouble(lng)));
+                    mAdapter.notifyItemInserted((int) (i-1));
                 }
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("CentreActivity", "Value is: " + value);
             }
             @Override
             public void onCancelled(DatabaseError error) {
