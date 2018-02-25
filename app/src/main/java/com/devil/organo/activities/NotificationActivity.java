@@ -44,7 +44,7 @@ public class NotificationActivity extends AppCompatActivity {
 
     void getData(){
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef = database.getReference("user"+sessionManager.getEmail()+"/notification");
+        final DatabaseReference myRef = database.getReference("user/"+sessionManager.getEmail()+"/notification");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
