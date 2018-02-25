@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.devil.organo.activities.AboutActivity"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ORGANO"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="#17ca00"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/head1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How to: "
+        android:textColor="#0be100"
+        android:textSize="24sp"
+        android:layout_margin="8dp"
+        android:layout_below="@id/head"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:text="It’s a very easy process, you can also be an Organo member by listing yourself upon Organo or you can link a centre through proper and legalized registration.
+For any of the activity (like organ/blood donation or requesting for the same) you have to fill respective form and you will be notified as per the progress and no need to worry about any of the formalities and all, because we are taking care of everything."
+        android:layout_below="@id/head1"/>
+
+</RelativeLayout>

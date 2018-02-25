@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.27"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Date:"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_weight="0.73"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Date"
+            android:textStyle="bold"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.27"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Donor ID:"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:id="@+id/donorID"
+            android:layout_width="0dp"
+            android:layout_weight="0.73"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Donor ID"
+            android:textStyle="bold"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.27"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Donor Name:"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:id="@+id/donorName"
+            android:layout_width="0dp"
+            android:layout_weight="0.73"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Donor Name"
+            android:textStyle="bold"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.27"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Centre Name:"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:id="@+id/centreName"
+            android:layout_width="0dp"
+            android:layout_weight="0.73"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Centre Name"
+            android:textStyle="bold"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="0.27"
+            android:text="Donated:"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/donated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="0.73"
+            android:text="Donated"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <Button
+        android:id="@+id/share"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_margin="4dp"
+        android:text="SHARE with Friends"
+        android:padding="4dp"
+        android:background="#2bc700"
+        android:layout_gravity="center_horizontal"/>
+    
+</LinearLayout>

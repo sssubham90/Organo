@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="states" >
+        <item>Odisha</item>
+        <item>Tamil Nadu</item>
+    </string-array>
+    <string-array name="bloodGroups" >
+        <item>A+ve</item>
+        <item>B+ve</item>
+    </string-array>
+    <string-array name="organs" />>
+</resources>

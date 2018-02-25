@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.devil.organo.activities.AboutActivity"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ORGANO"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:background="#17ca00"
+        android:textSize="32sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/head1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About us:"
+        android:textColor="#0be100"
+        android:textSize="24sp"
+        android:layout_margin="8dp"
+        android:layout_below="@id/head"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textSize="18sp"
+        android:text="Organo is an android app that links various government organisations’ and NGOs’ blood banks as well as hospitals that perform transplantation and blood acceptors(person who needs blood) into a single platform. It digitises the process and legal formalities that one has to go through in order to donate his/her blood and provide nearest centres for the same. You can also register as a donor in one of the centres through the app i.e, you give permission for your organ(s) to be donated after your death."
+        android:layout_below="@id/head1"/>
+
+</RelativeLayout>

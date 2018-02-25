@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/extended"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:clickable="true">
+    <LinearLayout
+        android:id="@+id/head"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#00d64b">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ORGANO"
+            android:textColor="@android:color/white"
+            android:layout_weight="1"
+            android:textSize="32sp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/organo_logo"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@android:color/white"
+        android:layout_marginStart="16dp"
+        android:layout_below="@+id/head"
+        android:layout_marginTop="20dp"
+        android:text="Menu"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/donor1"
+        android:src="@drawable/donor"
+        android:layout_below="@id/menu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/donor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignTop="@id/donor1"
+        android:layout_alignBottom="@id/donor1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@android:color/white"
+        android:layout_toEndOf="@id/donor1"
+        android:layout_toRightOf="@id/donor1"
+        android:text="Become a donor"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/recent1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/recent"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/donor1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recent activities"
+        android:id="@+id/recent"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_alignTop="@id/recent1"
+        android:layout_alignBottom="@id/recent1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/recent1"
+        android:layout_toRightOf="@id/recent1"/>
+
+    <ImageView
+        android:id="@+id/centre1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/centre"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/recent1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Centres"
+        android:textColor="@android:color/white"
+        android:id="@+id/centre"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_alignTop="@id/centre1"
+        android:layout_alignBottom="@id/centre1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/centre1"
+        android:layout_toRightOf="@id/centre1"/>
+
+    <ImageView
+        android:id="@+id/notification1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/notifications"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/centre1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:id="@+id/notification"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_alignTop="@id/notification1"
+        android:layout_alignBottom="@id/notification1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/notification1"
+        android:layout_toRightOf="@id/notification1"/>
+
+    <ImageView
+        android:id="@+id/blood1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/blood"
+        android:contentDescription="@string/app_name"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/notification1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Need Blood"
+        android:id="@+id/blood"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_alignTop="@id/blood1"
+        android:layout_alignBottom="@id/blood1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/blood1"
+        android:layout_toRightOf="@id/blood1" />
+
+    <ImageView
+        android:id="@+id/weblink1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/linkcentre"
+        android:contentDescription="@string/app_name"
+        android:background="@android:color/transparent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/blood1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Link a centre"
+        android:id="@+id/weblink"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="#6600ff"
+        android:layout_alignTop="@id/weblink1"
+        android:layout_alignBottom="@id/weblink1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/weblink1"
+        android:layout_toRightOf="@id/weblink1" />
+
+</RelativeLayout>

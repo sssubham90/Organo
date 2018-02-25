@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "641407047105",
+    "firebase_url": "https://organo-1a71c.firebaseio.com",
+    "project_id": "organo-1a71c",
+    "storage_bucket": "organo-1a71c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641407047105:android:f4c15160c7d35afe",
+        "android_client_info": {
+          "package_name": "com.devil.organo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641407047105-gcbnegrf6ha90g3ihkdj8ob6gcpdfoc2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devil.organo",
+            "certificate_hash": "7743632891f0bd0c67cd14c6c40f7e418b80636f"
+          }
+        },
+        {
+          "client_id": "641407047105-chmssh6rs9lvtkg1qvbat0fqi7i7glhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKxenWSQ0ThLWFvdKK6DQVD35rYPzFmsE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641407047105-chmssh6rs9lvtkg1qvbat0fqi7i7glhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
